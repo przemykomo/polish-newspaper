@@ -1,0 +1,19 @@
+\usepackage{newtxtext,newtxmath}
+\usepackage{etoolbox}
+\newcommand{\headlinestyle}{\itshape\huge}
+\newcommand{\bylinestyle}{\scshape\Large}
+\patchcmd{\headline}{#1}{\headlinestyle #1}{}{}
+\patchcmd{\byline}{#1}{\bylinestyle #1}{}{}
+
+\renewcommand{\maketitle}{\thispagestyle{empty}
+\vspace*{-40pt}
+\begin{center}
+    {\setlength\fboxsep{3mm}\raisebox{12pt}}\hfill%
+    {\textgoth{\huge\usefont{LYG}{bigygoth}{m}{n} \@papername}}\hfill%
+    \vspace*{0.1in}
+    \rule[0pt]{\textwidth}{0.5pt}\\
+    {\small Wydanie \MakeUppercase{\roman{volume}}} \hfill \MakeUppercase{\small\it\@date} \hfill {\small\MakeUppercase{\@paperlocation}}\\
+    \rule[6pt]{\textwidth}{1.2pt}
+\end{center}
+\pagestyle{plain}
+} 
