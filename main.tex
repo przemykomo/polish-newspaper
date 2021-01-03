@@ -25,6 +25,8 @@
 %% Custom package in the project directory
 \usepackage{newspaper-mod}
 
+\renewcommand{\byline}[2]{\begin {center} \bylinestyle #1 \\{\footnotesize \bf \MakeUppercase {#2}} \\ \rule [3pt]{0.4\hsize}{0.5pt}\\ \end {center} \par}
+
 %%%%%%%%%  Front matter   %%%%%%%%%%
 
 \usepackage{lipsum}
@@ -53,7 +55,7 @@ and there you have it.
 \closearticle
 
 \byline{New page article}{Jan Kowalski}
-\lipsum[1-4]
+\meaning\byline
 \closearticle
 
 \end{multicols}
