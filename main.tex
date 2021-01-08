@@ -5,6 +5,13 @@
 \usepackage{microtype}
 \usepackage[polish]{babel}
 \usepackage{newspaper}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+% I have no ide how to change the header in newspaper-mod.sty so this is a workaround
+\rhead{Exmple Newspaper}
+\lhead{Wydanie XV}
 
 \date{\today}
 \currentvolume{15}
@@ -55,7 +62,7 @@ and there you have it.
 \closearticle
 
 \byline{New page article}{Jan Kowalski}
-\meaning\byline
+    \lipsum[1-4]
 \closearticle
 
 \end{multicols}

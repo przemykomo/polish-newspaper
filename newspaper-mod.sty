@@ -16,4 +16,15 @@
     \rule[6pt]{\textwidth}{1.2pt}
 \end{center}
 \pagestyle{plain}
-} 
+}
+
+%%%%%%%   redefine plain page style  %%%%%%%
+\renewcommand{\ps@plain}{%
+\renewcommand\@oddfoot{}% % empty recto footer
+\let\@evenfoot\@oddfoot % empty verso footer
+\renewcommand\@evenhead
+{\parbox{\textwidth}{\vspace*{4pt}
+{\small Wydanie \MakeUppercase{\roman{volume}}}\hfill\normalfont\textbf{\@headername}}\hfill\textrm{\thepage}\\
+\rule{\textwidth}{0.5pt}
+\vspace*{12pt}}}%
+\let\@oddhead\@evenhead}
